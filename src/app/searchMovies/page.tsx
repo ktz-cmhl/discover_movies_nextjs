@@ -1,6 +1,6 @@
 import {SearchMoviesApi} from "@/app/api/moviesApi";
-import PaginationComponent from "@/compoenents/component_pagination";
-import ComponentMovieGrid from "@/compoenents/component_movie_grid";
+import PaginationComponent from "@/compoenents/component-pagination";
+import ComponentMovieGrid from "@/compoenents/component-movie-grid";
 
 type Props = {
     searchParams?: {

@@ -6,7 +6,7 @@ import logo from "../../public/theater.png"
 import Image from "next/image";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import HeaderComponent from "@/compoenents/component_header";
+import HeaderComponent from "@/compoenents/component-header";
 config.autoAddCss = false;
 
 const inter = Inter({subsets: ['latin']})

@@ -2,7 +2,7 @@
 import {Movie} from "@/app/model/MovieResponse";
 import {BounceLoader} from "react-spinners";
 import {useState} from "react";
-import ListItem from "@/compoenents/list_item_movie";
+import ListItem from "@/compoenents/list-item-movie";
 
 interface GridProps {
     movieList?: Array<Movie> | undefined

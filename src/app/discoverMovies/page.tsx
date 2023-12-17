@@ -1,7 +1,7 @@
-import ComponentMovieGrid from "@/compoenents/component_movie_grid";
+import ComponentMovieGrid from "@/compoenents/component-movie-grid";
 import {DiscoverMoviesApi, SearchMoviesApi} from "@/app/api/moviesApi";
 import {router} from "next/client";
-import PaginationComponent from "@/compoenents/component_pagination";
+import PaginationComponent from "@/compoenents/component-pagination";
 
 type Props = {
     searchParams?: {

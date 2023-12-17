@@ -3,6 +3,7 @@ import placeholder from '../../public/movie-svgrepo-com.svg';
 import {Rating} from "react-simple-star-rating";
 import Image from "next/image";
 import { rgbDataURL } from "@/utils/shared";
+import {useRouter} from "next/navigation";
 
 interface ListItemProps {
     movieId: number;
@@ -12,10 +13,14 @@ interface ListItemProps {
 }
 
 export default function ListItem({title, poster_path, vote_average, movieId,}: ListItemProps) {
+
+    const router = useRouter()
+
     return (
         <div
             onClick={() => {
                 console.log(`${movieId} clicked`);
+                router.push(`/movieDetail?movieId=${movieId}`)
             }}
             className='w-56 mt-4 bg-cardColor rounded-lg flex flex-col'>
             <Image

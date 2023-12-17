@@ -73,7 +73,7 @@ export default function PaginationComponent(props: Props) {
                            previousLinkClassName='w-12 h-12 grid place-content-center bg-white rounded-xl text-center mx-2 text-base text-balck'
                            nextLinkClassName='w-12 h-12 grid place-content-center bg-white rounded-xl text-center mx-2 text-base text-balck'
                            pageLinkClassName='w-12 h-12 grid place-content-center bg-white rounded-xl text-center mx-2 text-base text-black'
-                           activeLinkClassName='w-12 h-12 grid place-content-center bg-[#c51536] rounded-xl text-center mx-2 text-base text-white'
+                           activeLinkClassName='w-12 h-12 grid place-content-center bg-accentColor rounded-xl text-center mx-2 text-base text-white'
             />
         )
     }
