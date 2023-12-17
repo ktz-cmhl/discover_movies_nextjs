@@ -1,22 +1,20 @@
-import ComponentMovieGrid from "@/compoenents/component_movie_grid";
-import {DiscoverMoviesApi, SearchMoviesApi} from "@/app/api/moviesApi";
-import {router} from "next/client";
+import {SearchMoviesApi} from "@/app/api/moviesApi";
 import PaginationComponent from "@/compoenents/component_pagination";
+import ComponentMovieGrid from "@/compoenents/component_movie_grid";
 
 type Props = {
     searchParams?: {
-        search?: string;
+        search: string;
         page?: number;
     };
 };
-
-export default async function DiscoverMovies({searchParams}: Props) {
+export default async function SearchMovies({searchParams}: Props) {
 
     let totalPages = 0;
 
     async function getMovies() {
         try {
-            const res = await DiscoverMoviesApi.GetAll(searchParams?.page || 1)
+            const res = await SearchMoviesApi.GetAll(searchParams?.search!, searchParams?.page || 1)
             const movies = res.data;
             if (movies.total_pages == null) {
                 totalPages = 0
@@ -31,15 +29,17 @@ export default async function DiscoverMovies({searchParams}: Props) {
         }
     }
 
-    const data = await getMovies();
+    const data = await getMovies()
 
     return (
         <div className='bg-backgroundColor mb-4'>
             <div className='max-w-screen-xl mx-auto'>
-                <PaginationComponent currentPage={searchParams?.page || 1} totalPage={totalPages} type={"DISCOVER"}/>
+                <PaginationComponent currentPage={searchParams?.page || 1}
+                                     type={"SEARCH"}
+                                     query={searchParams?.search || ''}
+                                     totalPage={totalPages}/>
                 <ComponentMovieGrid movieList={data}/>
             </div>
         </div>
     )
-
 }
